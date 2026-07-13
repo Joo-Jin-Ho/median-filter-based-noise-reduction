@@ -26,3 +26,14 @@ Dynamic Memory Allocation : malloc과 calloc을 이용한 메모리 관리
 File I/O : 입력(noisy_data.txt)과 출력(filtered_result.txt)을 파일 형태로 처리
 
 Modular Design : read_file(), median_filtering(), heap_sort(), downheap() 등 기능별 함수로 모듈화하여 구현
+
+# 주요 함수
+read_file() : 입력 텍스트 파일을 읽어 44×45 크기의 데이터를 메모리에 저장합니다.
+
+median_filtering() : 각 위치의 3×3 주변 데이터를 수집하고 Heap Sort를 통해 중앙값을 계산하여 출력 배열을 생성합니다.
+
+heap_sort() : 수집된 주변 픽셀을 오름차순으로 정렬하여 Median 값을 선택할 수 있도록 합니다.
+
+downheap() : Heap Sort에서 Max Heap 구조를 유지하기 위한 Heapify 연산을 수행합니다.
+
+main() : 메모리 할당, 데이터 입력, 필터링 수행, 결과 저장 및 메모리 해제까지 전체 프로그램의 실행 흐름을 관리합니다.
