@@ -20,3 +20,14 @@ Backtracking 수행 : 더 이상 이동할 수 없는 경우 Stack에서 이전 
 모듈화 설계 : push(), pop(), algoritm(), init_stack() 등 기능별 함수로 구성
 
 메모리 효율성 : Stack을 활용하여 탐색 상태를 관리하고 DFS를 안정적으로 수행
+
+# 함수 역할
+init_stack() : Stack 초기화
+
+push() : 현재 좌표와 이동 방향을 Stack에 저장
+
+pop() : 가장 최근에 저장된 좌표를 꺼내 이전 위치로 복귀
+
+algoritm() : 현재 위치에서 8방향을 탐색하여 다음 이동 위치 결정
+
+main() : 전체 맵을 순차적으로 탐색하고 Labeling 수행
