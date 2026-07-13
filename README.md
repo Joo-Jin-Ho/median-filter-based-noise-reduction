@@ -7,3 +7,16 @@ Median filter implementation for image noise reduction and enhancement.
 입력 맵을 왼쪽에서 오른쪽, 위에서 아래 순서로 탐색하면서 값이 1인 지점을 발견하면 새로운 객체 탐색을 시작합니다. 탐색 과정에서는 현재 좌표와 이동 방향을 Stack에 저장하고, 주변의 연결된 픽셀을 모두 방문하며 동일한 Label을 부여합니다. 더 이상 연결된 픽셀이 존재하지 않으면 Stack에서 이전 위치를 꺼내 Backtracking을 수행하여 남은 경로를 계속 탐색합니다.
 
 최종적으로 모든 연결 요소를 탐색한 후 각 객체를 서로 다른 번호로 Labeling하여 출력하며, Stack 자료구조와 DFS 알고리즘을 활용한 Connected Component Labeling의 동작 원리를 학습하는 것을 목표로 하였습니다.
+
+# 특징
+Stack 기반 DFS 구현 : 재귀 호출 없이 직접 구현한 Stack을 이용하여 Connected Component 탐색
+
+8방향 연결성 탐색 : 상·하·좌·우 및 대각선을 포함한 8개의 방향을 모두 검사
+
+Connected Component Labeling : 연결된 영역마다 서로 다른 번호(Label)를 부여
+
+Backtracking 수행 : 더 이상 이동할 수 없는 경우 Stack에서 이전 좌표를 복원하여 탐색 지속
+
+모듈화 설계 : push(), pop(), algoritm(), init_stack() 등 기능별 함수로 구성
+
+메모리 효율성 : Stack을 활용하여 탐색 상태를 관리하고 DFS를 안정적으로 수행
